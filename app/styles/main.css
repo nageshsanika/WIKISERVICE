@@ -1,0 +1,16 @@
+.form-control{
+  margin-top:12px;
+}
+.user_name{
+  color:blue;
+}
+body{
+  overflow-x:hidden;
+}
+.title{
+  color:green;
+}
+.result_div h2,.result_div h3 span{
+  font-size:14px;
+  font-weight:bold;
+}

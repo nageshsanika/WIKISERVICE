@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="testApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div ng-controller="MainController" class='row'>
+      <hr/>
+      <div class='row'>
+        <div class='col-md-1'></div>
+        <div class='col-md-3 col-xs-12' data-ng-init="init()" ng-bind-html='username'></div>
+        <div class='col-md-3 col-xs-12'>
+          <h4 class='title'>Encyclopedia
+            <i><span class='glyphicon glyphicon-book'></span>
+              <small>( Using Wikipedia API )</small>
+            </i>
+          </h4>
+        </div>
+        <div class='col-md-3 col-xs-12'>
+          <input type="text" id='search_item' placeholder='Search anything. Ex: United States' class='form-control' style='margin-top:12px;' ng-keyup="$event.keyCode == 13 && getItem()" /><br />
+        </div>
+        <div class='col-md-1 col-xs-12'>
+          <button class='form-control btn btn-warning' ng-click='getItem()'><span class='glyphicon glyphicon-search'></span> Search</button>
+        </div>
+      </div>
+      <hr/>
+      <div class='row'>
+        <div class='col-md-1'></div>
+        <div class='col-md-10 result_div' ng-bind-html="dataFromWIKI"></div>
+        <div class='col-md-1'></div>
+      </div>
+    </div>
+    <div class="container">
+    <div ng-view=""></div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.js"></script>
+    <script src="https://code.angularjs.org/1.2.0/angular-sanitize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.0/angular-route.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services/wikiservice.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
+
